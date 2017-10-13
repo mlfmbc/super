@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.mlfmbc.R;
 
@@ -13,6 +14,7 @@ import com.mlfmbc.R;
  */
 
 public class SimpleFooterView extends LinearLayout implements FooterViewInterface{
+    private TextView title;
     private static final String TAG = "SimpleFooterView";
     public SimpleFooterView(Context context) {
         this(context,null,0);
@@ -27,8 +29,39 @@ public class SimpleFooterView extends LinearLayout implements FooterViewInterfac
         addView(LayoutInflater.from(getContext()).inflate(R.layout.simple_footer,null),new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         setOrientation(LinearLayout.VERTICAL);
         measure(0,0);
+        title= (TextView) findViewById(R.id.title);
         Log.e(TAG,getMeasuredHeight()+"");
-        setPadding(0, 0, 0,-getMeasuredHeight());
+//        setPadding(0, -getMeasuredHeight(), 0,0);
         Log.e(TAG,getMeasuredHeight()+"");
+    }
+
+    @Override
+    public void onPullUpLoading() {
+        title.setText("上拉加载更多");
+    }
+
+    @Override
+    public void onLoosenLoad() {
+        title.setText("松手加载");
+    }
+
+    @Override
+    public void onLoading() {
+        title.setText("加载中...");
+    }
+
+    @Override
+    public void onLoadEnd() {
+        title.setText("加载结束");
+    }
+
+    @Override
+    public void onPullUpProgressDiffY(int refreshDiffY) {
+        Log.e(TAG+"下拉加载",refreshDiffY+"");
+    }
+
+    @Override
+    public void onPullUpResumeProgressDiffY(int refreshDiffY) {
+        Log.e(TAG+"松手回弹",refreshDiffY+"");
     }
 }

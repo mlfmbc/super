@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mlfmbc.widget.SuperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/superLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mlfmbc.activity.RecyclerViewActivity">
+
+    <com.mlfmbc.widget.views.SuperRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/SuperNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.mlfmbc.activity.RecyclerViewActivity">
+    </com.mlfmbc.widget.views.SuperRecyclerView>
+</com.mlfmbc.widget.SuperLayout>

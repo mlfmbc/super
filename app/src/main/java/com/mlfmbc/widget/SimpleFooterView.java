@@ -28,7 +28,7 @@ public class SimpleFooterView extends LinearLayout implements FooterViewInterfac
         super(context, attrs, defStyleAttr);
         addView(LayoutInflater.from(getContext()).inflate(R.layout.simple_footer,null),new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         setOrientation(LinearLayout.VERTICAL);
-        measure(0,0);
+
         title= (TextView) findViewById(R.id.title);
         Log.e(TAG,getMeasuredHeight()+"");
 //        setPadding(0, -getMeasuredHeight(), 0,0);
@@ -42,7 +42,7 @@ public class SimpleFooterView extends LinearLayout implements FooterViewInterfac
 
     @Override
     public void onLoosenLoad() {
-        title.setText("松手加载");
+        title.setText("松手加载更多");
     }
 
     @Override
@@ -57,11 +57,11 @@ public class SimpleFooterView extends LinearLayout implements FooterViewInterfac
 
     @Override
     public void onPullUpProgressDiffY(int refreshDiffY) {
-        Log.e(TAG+"下拉加载",refreshDiffY+"");
+//        Log.e(TAG+"下拉加载",refreshDiffY+"");
     }
 
     @Override
     public void onPullUpResumeProgressDiffY(int refreshDiffY) {
-        Log.e(TAG+"松手回弹",refreshDiffY+"");
+//        Log.e(TAG+"松手回弹",refreshDiffY+"");
     }
 }

@@ -1,25 +1,30 @@
 package com.mlfmbc.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.mlfmbc.R;
 import com.mlfmbc.widget.SimpleFooterView;
 import com.mlfmbc.widget.SimpleHeaderView;
 import com.mlfmbc.widget.SuperLayout;
 
-public class ScrollingActivity extends AppCompatActivity {
+/**
+ * Created by chang on 2017/10/17.
+ */
+
+public class CoordinatorLayoutActivity  extends AppCompatActivity {
     private SuperLayout superLayout,superLayout1;
+    public static void onStart(Context context){
+        Intent intent=new Intent(context,CoordinatorLayoutActivity.class);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scrolling);
+        setContentView(R.layout.activity_coordinatorlayout);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //

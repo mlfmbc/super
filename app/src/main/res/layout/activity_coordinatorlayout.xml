@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mlfmbc.widget.SuperLayout
+<com.mlfmbc.widget.SuperLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/superLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
 
-   >
-    <com.mlfmbc.widget.views.SuperCoordinatorLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.mlfmbc.widget.views.SuperCoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.mlfmbc.activity.ScrollingActivity"
-        >
+        tools:context="com.mlfmbc.activity.CoordinatorLayoutActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar"
@@ -40,17 +36,28 @@
 
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
-        <com.mlfmbc.widget.SuperLayout
+
+        <com.mlfmbc.widget.SuperLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/superLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            >
-            <include layout="@layout/content_scrolling"
-                />
-</com.mlfmbc.widget.SuperLayout>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+            <com.mlfmbc.widget.views.SuperNestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/SuperNestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.mlfmbc.activity.CoordinatorLayoutActivity">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="@string/large_text" />
+
+            </com.mlfmbc.widget.views.SuperNestedScrollView>
+        </com.mlfmbc.widget.SuperLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -63,4 +70,3 @@
 
     </com.mlfmbc.widget.views.SuperCoordinatorLayout>
 </com.mlfmbc.widget.SuperLayout>
-

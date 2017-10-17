@@ -27,42 +27,40 @@ private TextView title;
         super(context, attrs, defStyleAttr);
         addView(LayoutInflater.from(getContext()).inflate(R.layout.simple_header,null),new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         setOrientation(LinearLayout.VERTICAL);
-        measure(0,0);
         title= (TextView) findViewById(R.id.title);
-//        setPadding(0, -getMeasuredHeight(), 0, 0);
     }
 
     @Override
     public void onPullDownLoading() {
-        title.setText("下拉加载更多");
+        title.setText("下拉刷新更多");
 
     }
 
     @Override
     public void onLoosenLoad() {
-        title.setText("松手加载");
+        title.setText("松手刷新");
 
     }
 
     @Override
     public void onLoading() {
-        title.setText("加载中...");
+        title.setText("刷新中...");
 
     }
 
     @Override
     public void onLoadEnd() {
-        title.setText("加载结束");
+        title.setText("刷新结束");
     }
 
     @Override
     public void onPullDownProgressDiffY(int refreshDiffY) {
-        Log.e(TAG+"上拉加载",refreshDiffY+"");
+//        Log.e(TAG+"上拉刷新",refreshDiffY+"");
     }
 
     @Override
     public void onPullDownResumeProgressDiffY(int refreshDiffY) {
-        Log.e(TAG+"松手回弹",refreshDiffY+"");
+//        Log.e(TAG+"松手回弹",refreshDiffY+"");
     }
 
 

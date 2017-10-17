@@ -22,15 +22,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.ScrollingActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+         />
         <activity
             android:name=".activity.NestedScrollViewActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".activity.RecyclerViewActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity android:name=".activity.ScrollViewActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+           />
     </application>
 
 </manifest>

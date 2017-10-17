@@ -573,6 +573,8 @@ public class SuperLayout extends LinearLayout {
                 headerViewInterface.onPullDownProgressDiffY(refreshDiffY);
             onMove(refreshDiffY);
             return true;
+        }else{
+            onMove(0);
         }
         if (refreshDiffY < 0 && shouldHandleLoadingMore()) {
             if (Math.abs(refreshDiffY) > Math.abs(mMaxWholeFooterViewPaddingBottom)) {
@@ -585,6 +587,8 @@ public class SuperLayout extends LinearLayout {
 
             onMove(refreshDiffY);
             return true;
+        }else{
+            onMove(0);
         }
         return false;
     }
